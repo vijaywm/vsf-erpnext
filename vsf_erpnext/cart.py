@@ -17,8 +17,8 @@ def update(token=None, cartId=None):
             "item_id": 580,
             "product_id": 580,
             "stock_id": 1,
-            "qty": 53,
-            "is_in_stock": True,
+            "qty": 0,
+            "is_in_stock": False,
             "is_qty_decimal": False,
             "show_default_notification_message": False,
             "use_config_min_qty": True,
@@ -37,15 +37,18 @@ def update(token=None, cartId=None):
             "enable_qty_increments": False,
             "use_config_manage_stock": True,
             "manage_stock": True,
-            "low_stock_date": null,
+            "low_stock_date": None,
             "is_decimal_divided": False,
             "stock_status_changed_auto": 0
         }
     }
-    r = Response(result)
-    # r.status_code = 200
-    # r.headers['Access-Control-Allow-Origin'] = '*'
-    return r
+    # frappe.response['content_type'] = 'application/json'
+
+    # return Response(json.dumps({"code": 500, "result": "Item not found"}), status=200,
+    #                 content_type="application/json", )
+
+    return Response(json.dumps(result), status=200,
+                    content_type="application/json", )
 
 
 @frappe.whitelist(allow_guest=True)
