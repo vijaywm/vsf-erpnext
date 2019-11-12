@@ -8,8 +8,11 @@ __version__ = '0.0.1'
 
 @frappe.whitelist(allow_guest=True)
 # api url: http://<site_name>/api/method/vsf_erpnext.cart.update?token=&cartId=
-def update(token=None, cartId=None):
+def update(token=None, cartId=None,):
     # https://github.com/DivanteLtd/vue-storefront-integration-sdk/blob/tutorial/sample-api-js/src/api/stock.js
+
+    # doc = frappe.local.form_dict["cartItem"]
+    # print(doc)
 
     result = {
         "code": 200,
