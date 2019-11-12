@@ -26,3 +26,8 @@ def sync_product():
                             )
 
     return response.json()
+
+
+def on_update_item(doc, method):
+    # doc.id
+    pass

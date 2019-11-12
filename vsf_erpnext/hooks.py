@@ -79,13 +79,17 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+    "Item": {
+        "on_update": "vsf_erpnext.sync.on_update_item"
+    }
+    # "*": {
+    # 	"on_update": "method",
+    # 	"on_cancel": "method",
+    # 	"on_trash": "method"
+    # }
+}
+
 
 # Scheduled Tasks
 # ---------------
@@ -126,4 +130,3 @@ app_license = "MIT"
 # override_doctype_dashboards = {
 # 	"Task": "vsf_erpnext.task.get_dashboard_data"
 # }
-
